@@ -1,5 +1,10 @@
 name: Recovery Build
 
+    - name: Clone vendor tree
+      run: |
+        git clone https://github.com/evoxdl/proprietary_vendor_motorola_kansas ./vendor/motorola/kansas
+      working-directory: ${{ steps.pwd.outputs.workspace-folder }}
+
 on:
   workflow_dispatch:
     inputs:
