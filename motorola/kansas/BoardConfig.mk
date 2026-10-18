@@ -172,8 +172,7 @@ PLATFORM_SECURITY_PATCH := 2025-06-01
 BOARD_API_LEVEL := 35
 BOARD_SHIPPING_API_LEVEL := 35
 
-# SELinux
-include device/motorola/kansas/sepolicy/sepolicy.mk
+# SELinux: sepolicy/sepolicy.mk is not included, its vendor file_contexts use types no .te declares (checkfc fails)
 
 # VINTF
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
