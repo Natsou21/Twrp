@@ -17,8 +17,9 @@
 
 LOCAL_PATH := device/motorola/kansas
 
-# API Level
-PRODUCT_SHIPPING_API_LEVEL := 35
+# Recovery-only build compatibility with the twrp-12.1 (API 32) base.
+# This does not describe the real device shipping API or validate vendor ABI.
+PRODUCT_SHIPPING_API_LEVEL := 32
 
 # Health HAL
 PRODUCT_PACKAGES += \
