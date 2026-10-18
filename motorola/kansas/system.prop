@@ -5,7 +5,8 @@ ro.product.system.brand=motorola
 ro.product.system.device=kansas
 ro.product.system.manufacturer=motorola
 ro.product.system.model=moto g - 2025
-ro.product.system.name=kansas_g_sys
+# ro.product.system.name omitted: build system already sets it to twrp_kansas;
+# duplicating it here fails post_process_props (duplicate sysprop assignments).
 
 # Fingerprint
 ro.build.fingerprint=motorola/kansas_g_sys/kansas:15/V1VK35.22-125/06468-7f0382:user/release-keys
