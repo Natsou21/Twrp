@@ -130,9 +130,10 @@ jobs:
         fi
       working-directory: ${{ steps.pwd.outputs.workspace-folder }}
 
-    - name: Clone vendor tree
+    - name: Create minimal vendor stub
       run: |
-        git clone https://github.com/evoxdl/proprietary_vendor_motorola_kansas ./vendor/motorola/kansas
+        mkdir -p vendor/motorola/kansas
+        echo "# recovery-only stub, no proprietary blobs" > vendor/motorola/kansas/kansas-vendor.mk
       working-directory: ${{ steps.pwd.outputs.workspace-folder }}
 
     - name: Clone common tree
