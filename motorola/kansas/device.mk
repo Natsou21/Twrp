@@ -66,11 +66,10 @@ PRODUCT_PACKAGES += \
 # VNDK
 PRODUCT_TARGET_VNDK_VERSION := 35
 
-# Additional Libraries
+# Additional Libraries (libicuuc is host-only on the twrp-12.1 base; TWRP pulls libandroidicu.recovery itself)
 PRODUCT_PACKAGES += \
     libion \
-    libxml2 \
-    libicuuc
+    libxml2
 
 # Display
 PRODUCT_PACKAGES += \
