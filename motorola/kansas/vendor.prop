@@ -1,11 +1,10 @@
 # Vendor Properties for Motorola Kansas
 
+# Product identity: model and name are generated from the product makefile.
 # Brand
 ro.product.vendor.brand=motorola
 ro.product.vendor.device=kansas
 ro.product.vendor.manufacturer=motorola
-ro.product.vendor.model=kansas
-ro.product.vendor.name=kansas_g_sys
 
 # Bootloader
 ro.bootloader=unknown
