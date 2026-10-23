@@ -179,6 +179,21 @@ jobs:
         sha256sum "$f"
       working-directory: ${{ steps.pwd.outputs.workspace-folder }}
 
+    - name: Verify diagnostic ramdisk configuration
+      run: |
+        root=out/target/product/${{ github.event.inputs.DEVICE_NAME }}/recovery/root
+        test -s "$root/init.recovery.usb.rc"
+        grep -q 'setprop sys.usb.configfs 1' "$root/init.recovery.usb.rc"
+        grep -q 'setprop sys.usb.controller 11201000.usb0' "$root/init.recovery.usb.rc"
+        for f in "$root/system/etc/recovery.fstab" "$root/system/etc/twrp.flags"; do
+          test -f "$f"
+          if grep -Eq '^[[:space:]]*[^#[:space:]]' "$f"; then
+            echo "Unexpected active partition entry in $f"
+            exit 1
+          fi
+        done
+      working-directory: ${{ steps.pwd.outputs.workspace-folder }}
+
     - name: Upload to Release
       uses: softprops/action-gh-release@v2
       with:

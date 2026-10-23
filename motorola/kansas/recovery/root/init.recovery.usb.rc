@@ -1,0 +1,7 @@
+# Diagnostic USB: imported explicitly by TWRP init, independent of ro.hardware.
+# Generic configfs gadget/FunctionFS setup and ADB binding are in TWRP init.rc.
+# Controller name matches the supplied stock vendor ramdisk.
+on init
+    setprop sys.usb.configfs 1
+    setprop sys.usb.controller 11201000.usb0
+    setprop sys.usb.ffs.aio_compat 1

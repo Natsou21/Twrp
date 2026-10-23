@@ -83,3 +83,7 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 
 # Inherit from vendor
 # No proprietary vendor product is inherited in this diagnostic variant.
+
+# Always install diagnostic USB init at the path imported by recovery init.rc.
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/recovery/root/init.recovery.usb.rc:recovery/root/init.recovery.usb.rc
