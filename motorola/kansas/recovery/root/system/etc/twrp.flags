@@ -1,3 +1,4 @@
+# Diagnostic variant: userdata and metadata intentionally not exposed.
 # Mount point           FS      Device                          Flags
 
 # Boot partitions
@@ -7,8 +8,6 @@
 /dtbo                   emmc    /dev/block/by-name/dtbo_a       flags=slotselect;display="DTBO";backup=1;flashimg=1
 
 # Data and Metadata
-/metadata               f2fs    /dev/block/by-name/metadata     flags=display="Metadata";wrappedkey
-/data                   f2fs    /dev/block/by-name/userdata     flags=fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized+wrappedkey_v0;wrappedkey;keydirectory=/metadata/vold/metadata_encryption
 
 # Persistent partitions
 /persist                ext4    /dev/block/by-name/persist      flags=display="Persist"

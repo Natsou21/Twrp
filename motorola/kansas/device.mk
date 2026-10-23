@@ -64,16 +64,14 @@ PRODUCT_PACKAGES += \
     mtk_plpath_utils.recovery
 
 # VNDK
-PRODUCT_TARGET_VNDK_VERSION := 35
+PRODUCT_TARGET_VNDK_VERSION := current
 
 # Additional Libraries (libicuuc is host-only on the twrp-12.1 base; TWRP pulls libandroidicu.recovery itself)
 PRODUCT_PACKAGES += \
     libion \
     libxml2
 
-# Display
-PRODUCT_PACKAGES += \
-    libdisplayconfig.qti
+# No Qualcomm display library on this MediaTek diagnostic target.
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -84,4 +82,4 @@ PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
 # Inherit from vendor
-$(call inherit-product, vendor/motorola/kansas/kansas-vendor.mk)
+# No proprietary vendor product is inherited in this diagnostic variant.
